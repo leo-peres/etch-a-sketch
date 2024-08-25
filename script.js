@@ -1,5 +1,12 @@
 const gridContainer = document.querySelector("#grid-container");
 
+gridContainer.addEventListener("mouseover", (evt) => {
+    const targetCell = evt.target;
+    if(targetCell.classList.contains("cell")) {
+        targetCell.classList.add("painted-cell");
+    }
+});
+
 const gridArray = new Array(16);
 const rowsArray = new Array(16);
 
