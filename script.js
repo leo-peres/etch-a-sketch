@@ -10,6 +10,15 @@ gridContainer.addEventListener("mouseover", (evt) => {
 const gridArray = new Array(16);
 const rowsArray = new Array(16);
 
+const popupButton = document.querySelector("#popup-button");
+popupButton.addEventListener("click", () => {
+    let newDim = parseInt(prompt("Type new dimension (max value: 100)"));
+    if(newDim !== NaN && newDim >= 1 && newDim <= 100) {
+        gridContainer.innerHTML = '';
+        createGrid(newDim);
+    }
+});
+
 function createGrid(dim) {
 
     for(let i = 0; i < dim; i++) {

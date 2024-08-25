@@ -6,13 +6,20 @@ body {
     justify-content: stretch;
 }
 
+#popup-button {
+    padding: auto;
+    flex: 0 0 48px;
+    align-self: center;
+}
+
 #grid-container {
-    padding:48px;
+    border: 1px solid rgb(248, 88, 88);
+    margin:48px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
-    flex: auto;
+    flex: 1 1 auto;
 }
 
 .row {
@@ -22,7 +29,7 @@ body {
 }
 
 .cell {
-    border: 1px solid rgb(248, 88, 88);
+    /*border: 1px solid rgb(248, 88, 88);*/
     flex: auto;
 }
 
