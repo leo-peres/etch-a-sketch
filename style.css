@@ -7,6 +7,7 @@ body {
 }
 
 #grid-container {
+    padding:48px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
