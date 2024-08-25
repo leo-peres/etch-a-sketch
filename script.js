@@ -1,9 +1,20 @@
+let randomColor = false;
+
 const gridContainer = document.querySelector("#grid-container");
 
 gridContainer.addEventListener("mouseover", (evt) => {
     const targetCell = evt.target;
     if(targetCell.classList.contains("cell")) {
-        targetCell.classList.add("painted-cell");
+        if(randomColor) {
+            let rValue = Math.floor(Math.random()*256);
+            let gValue = Math.floor(Math.random()*256);
+            let bValue = Math.floor(Math.random()*256);
+            let backgroundColor = `rgb(${rValue}, ${gValue}, ${bValue})`;
+            targetCell.style.background = backgroundColor;
+        }
+        else {
+            targetCell.style.background = "rgb(0, 0, 224)";
+        }
     }
 });
 
@@ -18,6 +29,12 @@ popupButton.addEventListener("click", () => {
         createGrid(newDim);
     }
 });
+
+const blueButton = document.querySelector("#blue-button");
+blueButton.addEventListener("click", () => randomColor = false);
+
+const randomButton = document.querySelector("#random-button");
+randomButton.addEventListener("click", () => randomColor = true);
 
 function createGrid(dim) {
 
