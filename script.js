@@ -2,9 +2,6 @@ let dim = 16;
 
 let colorMode = 1;
 
-const gridArray = [];
-const rowsArray = [];
-
 const opacityMatrix = [];
 
 const gridContainer = document.querySelector("#grid-container");
@@ -66,20 +63,11 @@ function resetOpacityMatrix() {
 
 function createGrid() {
 
-    gridArray.length = 0;
-    rowsArray.length = 0;
-
-    opacityMatrix.length = 0;
-
     for(let i = 0; i < dim; i++) {
-
-        const rowArray = new Array(dim);
-        gridArray[i] = rowArray;
 
         const newRowDiv = document.createElement("div");
         newRowDiv.classList.add("row");
         newRowDiv.id = `row-${i+1}`;
-        rowsArray[i] = newRowDiv;
 
         gridContainer.appendChild(newRowDiv);
 
@@ -92,12 +80,11 @@ function createGrid() {
 
             newRowDiv.appendChild(newCellDiv);
 
-            rowArray[j] = newCellDiv;
-
         }
 
     }
 
+    opacityMatrix.length = dim;
     for(let i = 0; i < dim; i++) {
         opacityMatrix[i] = []
     }
